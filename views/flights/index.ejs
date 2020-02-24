@@ -14,9 +14,9 @@
             <tr>
                 <td><%= flight.airline %></td>
                 <td><%= flight.flightNo %></td>
-                <td><%= flight.departs %></td>
+                <td><%= flight.departs.toLocaleString() %></td>
             </tr>
-        <% }); %> 
+        <% }); %>
     </tbody>
 </table>
 <a href="flights/new">Add Flight</a>
