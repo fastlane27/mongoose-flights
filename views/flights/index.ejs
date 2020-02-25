@@ -10,17 +10,20 @@
         </tr>
     </thead>
     <tbody>
-        <% flights.forEach(flight => { %> 
-            <tr>
-                <td><%= flight.airport %></td>
-                <td><%= flight.airline %></td>
-                <td><%= flight.flightNo %></td>
-                <td><%= flight.departs.toLocaleString() %></td>
-                <td><a href="flights/<%= flight.id %>">Details</a></td>
-            </tr>
+        <% flights.forEach(flight => { %>
+            <% if (flight.departs.getTime() < new Date().getTime()) { %>
+                <tr style="color:red;">
+            <% } else { %>
+                <tr>
+            <% } %>
+                    <td><%= flight.airport %></td>
+                    <td><%= flight.airline %></td>
+                    <td><%= flight.flightNo %></td>
+                    <td><%= flight.departs.toLocaleString() %></td>
+                    <td><a href="flights/<%= flight.id %>">Details</a></td>
+                </tr>
         <% }); %>
     </tbody>
 </table>
-<a href="flights/new">Add Flight</a>
 
 <%- include('../partials/footer') %>

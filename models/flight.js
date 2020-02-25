@@ -17,7 +17,7 @@ const destinationSchema = new Schema({
 const flightSchema = new Schema({
     airline: {
         type: String,
-        required: true,
+        // required: true,
         enum: ['American', 'Southwest', 'United']
     },
     flightNo: {
@@ -25,7 +25,7 @@ const flightSchema = new Schema({
         required: true,
         min: 10,
         max: 9999
-    }, 
+    },
     departs: {
         type: Date,
         default: function() {

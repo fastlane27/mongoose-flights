@@ -11,7 +11,7 @@
     </select>
     <label for="airline-select">Airline</label>
     <select name="airline" id="airline-select">
-        <option value="">Choose airline</option>
+        <option value="">- select airline -</option>
         <option value="American">American</option>
         <option value="Southwest">Southwest</option>
         <option value="United">United</option>
@@ -19,7 +19,7 @@
     <label for="flight-number">Flight No.</label>
     <input type="number" name="flightNo" id="flight-number" value="10" min="10" max="9999">
     <label for="depart-date">Depature</label>
-    <input type="datetime-local" name="departs" id="depart-date">
+    <input type="datetime-local" name="departs" id="depart-date" value="<%= defaultDate %>">
     <input type="submit" value="Add Flight">
 </form>
     
