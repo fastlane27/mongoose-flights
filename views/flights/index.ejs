@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 
-<h1>Flights</h1>
 <table>
     <thead>
         <tr>
+            <th>Airport</th>
             <th>Airline</th>
             <th>Flight No.</th>
             <th>Departure</th>
@@ -12,9 +12,11 @@
     <tbody>
         <% flights.forEach(flight => { %> 
             <tr>
+                <td><%= flight.airport %></td>
                 <td><%= flight.airline %></td>
                 <td><%= flight.flightNo %></td>
                 <td><%= flight.departs.toLocaleString() %></td>
+                <td><a href="flights/<%= flight.id %>">Details</a></td>
             </tr>
         <% }); %>
     </tbody>
