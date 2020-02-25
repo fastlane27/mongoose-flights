@@ -11,17 +11,13 @@
     </thead>
     <tbody>
         <% flights.forEach(flight => { %>
-            <% if (flight.departs.getTime() < new Date().getTime()) { %>
-                <tr style="color:red;">
-            <% } else { %>
-                <tr>
-            <% } %>
-                    <td><%= flight.airport %></td>
-                    <td><%= flight.airline %></td>
-                    <td><%= flight.flightNo %></td>
-                    <td><%= flight.departs.toLocaleString() %></td>
-                    <td><a href="flights/<%= flight.id %>">Details</a></td>
-                </tr>
+             <tr <%- flight.departs.getTime() < new Date().getTime() ? 'class="expired"' : '' %>>
+                <td><%= flight.airport %></td>
+                <td><%= flight.airline %></td>
+                <td><%= flight.flightNo %></td>
+                <td><%= flight.departs.toLocaleString() %></td>
+                <td><a href="flights/<%= flight.id %>">Details</a></td>
+            </tr>
         <% }); %>
     </tbody>
 </table>

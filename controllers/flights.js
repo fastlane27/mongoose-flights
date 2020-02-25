@@ -8,8 +8,7 @@ module.exports = {
 };
 
 function index(req, res) {
-    Flight.find({}, function(err, flights) {
-        flights.sort((a, b) => a.departs.getTime() - b.departs.getTime());
+    Flight.find({}).sort('departs').exec(function(err, flights) {
         res.render('flights/index', { title: 'All Flights', flights });
     });
 }
@@ -40,7 +39,7 @@ function create(req, res) {
     }
     const flight = new Flight(req.body);
     flight.save(function(err) {
-        if (err) return res.render('flights/new');
+        if (err) return res.redirect('/flights/new');
         res.redirect('/flights');
     });
 }
