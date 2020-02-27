@@ -20,7 +20,7 @@
 </table>
 
 <h2>Destinations</h2>
-<form action="/flights/<%= flight._id %>/destinations" method="POST">
+<form action="/flights/<%= flight._id %>/destinations" method="POST" id="dest-form">
     <label for="airport-select">Airport</label>
     <select name="airport" id="airport-select">
         <option value="">-</option>
@@ -77,6 +77,6 @@
 <% } else { %>
     <h4>No Tickets</h4>
 <% } %>
-<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+<a href="/flights/<%= flight._id %>/tickets/new" id="ticket-btn">Add Ticket</a>
 
 <%- include('../partials/footer') %>
