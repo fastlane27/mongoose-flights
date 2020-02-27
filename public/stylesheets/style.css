@@ -85,7 +85,7 @@ td:nth-child(5) {
 }
 
 td a {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-decoration: none;
   background-color: skyblue;
   border-radius: 0.2rem;
@@ -114,6 +114,7 @@ label {
 
 input, select, option {
   color: rgb(64, 64, 64);
+  min-height: 1.75rem;
 }
 
 input[type=submit] {
@@ -160,5 +161,9 @@ input[type=text], input[type=number] {
 
 #add-flight label, #add-ticket label {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+select {
+  background: white;
 }
