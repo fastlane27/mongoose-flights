@@ -82,6 +82,7 @@ td:nth-child(1) {
 td:nth-child(5) {
   text-align: right;
   padding-right: 0.4rem;
+  margin-right: auto;
 }
 
 td a {
@@ -166,4 +167,18 @@ input[type=text], input[type=number] {
 
 select {
   background: white;
+}
+
+#delete-btn {
+  padding: 0;
+}
+
+#delete-btn form {
+  margin-right: 0.4rem;
+}
+
+#delete-btn input {
+  background-color: rgb(255, 32, 32);
+  margin: 0 0 0 auto;
+  padding: 0 0.5rem;
 }
